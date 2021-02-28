@@ -9,10 +9,14 @@ Discord: https://discord.gg/d4wWxCfqZm
 HCSv2 Documentation:
 HCS has 8 colour presets ranging from NUM1 to NUM9, the script can be switched on and off using NUM5. There are 5 leagues + 2 categories of 20 teams each to choose from, adding up to +140 commands including commands unrelated to leagues. GUI is complete with a Discord invite, Github link and Haxball launcher.
 
+Nearly all team kits are from 2020/21. They are copied as best as possible by getting the exact colour of the shirt using a color picker tool. Team kits that have irregular patterns are copied as closely as possible while trying to resemble the original. It should be noted the kits' colour is taken from the front of the shirt and text colour from the back or from the secondary color.
+
 # TO RUN HCSv2, DOWNLOAD CURRENT VER OF AUTOHOTKEY
 https://www.autohotkey.com
 Without Autohotkey, the script can't run. It is the equivalent of needing to install the latest python version to run a python script.
 
-Once AHK is downloaded with the express installation, Only download HCSv2 and not the whole repository as a .ZIP. HCSv2 can be double clicked as a file and is free to use on Haxball. All of the commands are to be typed out in chat exactly how they are parsed: Prefix + Kit + Team (e.g. /ArsenalRed where "/" is the prefix, "Arsenal" is the desired kit and "Red" is the team it should be applied to.)
+Once AHK is downloaded with the express installation, Only download HCSv2 and not the whole repository as a .ZIP. HCSv2 can be double clicked as a file and is free to use on Haxball. All of the commands are to be typed out in chat exactly how they are parsed: Prefix + Kit + Team (e.g. /ArsenalRed where "/" is the prefix, "Arsenal" is the desired kit and "Red" is the team it should be applied to. Capital letters are not necessary)
 
 (Note, AHK is a selfbot-type script. Only the client can use commands and hotkeys. Because of AHK programming language limitations, the script pastes the colours from the users chat. This means the player cant use the hotkeys while playing as it will stop them for around 0.3 seconds.)
+
+HCS is still missing some features like away kits and Random team picker. These will be included in the next updates.
