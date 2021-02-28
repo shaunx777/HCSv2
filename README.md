@@ -9,7 +9,6 @@ Discord: https://discord.gg/d4wWxCfqZm
 HCSv2 Documentation:
 HCS has 8 colour presets ranging from NUM1 to NUM9, the script can be switched on and off using NUM5. There are 5 leagues + 2 categories of 20 teams each to choose from, adding up to +140 commands including commands unrelated to leagues. GUI is complete with a Discord invite, Github link and Haxball launcher.
 
-HCSv2 Help:
 # TO RUN HCSv2, DOWNLOAD CURRENT VER OF AUTOHOTKEY
 https://www.autohotkey.com
 Without Autohotkey, the script can't run. It is the equivalent of needing to install the latest python version to run a python script.
