@@ -37,7 +37,12 @@ Gui, Show, x127 y87 h383 w483, Haxball Colour Selfbot
 Return
 
 GuiClose:
+Gui, Destroy
+Progress, B1 w400 cwFFFFFF fs18 zh0, Leaving HCSv2..., , , Arial
+Sleep 1500
+Progress, Off
 ExitApp
+return
 
 ButtonDISCORD:
 Run, https://discord.gg/d4wWxCfqZm, , Max
@@ -54,7 +59,7 @@ return
 ButtonHIDE:
 Gui, Destroy
 Progress, B1 w400 cwFFFFFF fs18 zh0, HCS has been minimized to tray., , , Arial
-Sleep 3000
+Sleep 1500
 Progress, Off
 return
 
@@ -93,6 +98,7 @@ Gui, Add, Text, x122 y19 w100 h30 , HAXBALL
 Gui, Add, Text, x122 y39 w100 h30 , COLOUR
 Gui, Add, Text, x122 y59 w100 h30 , SELFBOT
 Gui, Add, Button, x182 y319 w100 h50 gTeamKitsBack, BACK
+Gui, Add, CheckBox, x325 y75 w110 h30 gOnTop, STAY ON TOP
 F0=https://i.imgur.com/uoclrb9.png
 F1=%A_MyDocuments%\hcs.png
 SplitPath,f1,,,,nne,
@@ -104,7 +110,7 @@ Gui, Font, S10 CDefault, Verdana
 Gui, Add, Text, x242 y19 w220 h30 +Center, LEAGUE TEAM KIT COMMANDS
 Gui, Font, S8 CDefault, Verdana
 Gui, Font, S7 CDefault, Verdana
-Gui, Add, Text, x180 y45 w310 h60 , To use the team kits, type out these commands in chat but add "blue" or "red" at the end to set them for different teams. Example: /ArsenalRed
+Gui, Add, Text, x180 y45 w310 h35 , To use the team kits for team red, type out the command in chat. Add a "2" at the end of it to set it to blue team. Example: /Arsenal2
 Gui, Font, S8 CDefault, Verdana
 Gui, Font, S6 CDefault, Verdana
 Gui, Font, S10 CDefault, Verdana
@@ -169,8 +175,8 @@ Gui, Font, S10 CDefault, Verdana
 Gui, Add, Button, x32 y259 w120 h60 , BACK
 Gui, Add, Button, x182 y259 w120 h60 gTeamKits, TEAM KITS
 Gui, Add, Button, x332 y259 w120 h60 , COMMANDS
-Gui, Font, S8 CDefault, Verdana
 Gui, Add, Text, x2 y109 w260 h140 +Left, Numpad1 = Default Red and Blue colors. `n`nNumpad2 = Black and white colors.`n`nNumpad3 = Bubblegum colors. `n`nNumpad4 = Aesthetic and light colors.`n`nNumpad5 = Switch the script on/off.
+Gui, Font, S8 CDefault, Verdana
 Gui, Font, S9 CDefault, Verdana
 Gui, Font, S8 CDefault, Verdana
 Gui, Add, Text, x262 y109 w370 h140 , Numpad6 = Yellow and Green colors. `n`nNumpad7 = Triple colour gradients`n`nNumpad8 = FFA greyscale colours. `n`nNumpad9 = Inverted team colors
@@ -238,10 +244,14 @@ Gui, Add, Picture, x372 y19 w80 h70 , %A_MyDocuments%\discord.jpg
 Gui, Show, x127 y87 h383 w483, Haxball Colour Selfbot
 Return
 
+OnTop:
+WinSet, AlwaysOnTop, toggle, A
+return
+
 ::/quit::
 Gui, Destroy
 Progress, B1 w400 cwFFFFFF fs18 zh0, Leaving HCSv2..., , , Arial
-Sleep 3000
+Sleep 1500
 Progress, Off
 ExitApp
 return
@@ -486,202 +496,202 @@ Return
 ;PREMIER LEAGUE
 ;///////////////
 
-::/ArsenalRed::
+::/Arsenal::
 Send /colors red 0 D6D2CE F6F6F6 DD0C1E F6F6F6
 Send {Enter}
 return
 
-::/ArsenalBlue::
+::/Arsenal2::
 Send /colors blue 0 D6D2CE F6F6F6 DD0C1E F6F6F6
 Send {Enter}
 return
 
-::/AstonVillaRed::
+::/AstonVilla::
 Send /colors red 360 FFFFFF A2B6F1 881C2C A2B6F1
 Send {Enter}
 return
 
-::/AstonVillaBlue::
+::/AstonVilla2::
 Send /colors blue 360 FFFFFF A2B6F1 881C2C A2B6F1
 Send {Enter}
 return
 
-::/BrightonRed::
+::/Brighton::
 Send /colors red 0 EFEAE6 0048AE
 Send {Enter}
 return
 
-::/BrightonBlue::
+::/Brighton2::
 Send /colors blue 0 EFEAE6 0048AE
 Send {Enter}
 return
 
-::/BurnleyRed::
+::/Burnley::
 Send /colors red 0 EFEAE6 84C8DB 971B3F 84C8DB
 Send {Enter}
 return
 
-::/BurnleyBlue::
+::/Burnley2::
 Send /colors blue 0 EFEAE6 84C8DB 971B3F 84C8DB
 Send {Enter}
 return
 
-::/ChelseaRed::
+::/Chelsea::
 Send /colors red 360 FFFFFF 0247C5
 Send {Enter}
 return
 
-::/ChelseaBlue::
+::/Chelsea2::
 Send /colors blue 360 FFFFFF 0247C5
 Send {Enter}
 return
 
-::/CrystalPalaceRed::
+::/CrystalPalace::
 Send /colors red 0 F1F0F3 1C339B B2021E 1C339B
 Send {Enter}
 return
 
-::/CrystalPalaceBlue::
+::/CrystalPalace2::
 Send /colors blue 0 F1F0F3 1C339B B2021E 1C339B
 Send {Enter}
 return
 
-::/EvertonRed::
+::/Everton::
 Send /colors red 360 FFFFFF 123B79
 Send {Enter}
 return
 
-::/EvertonBlue::
+::/Everton2::
 Send /colors blue 360 FFFFFF 123B79
 Send {Enter}
 return
 
-::/FulhamRed::
+::/Fulham::
 Send /colors red 0 060A0B DEDEDE
 Send {Enter}
 return
 
-::/FulhamBlue::
+::/Fulham2::
 Send /colors blue 0 060A0B DEDEDE
 Send {Enter}
 return
 
-::/LeedsRed::
+::/Leeds::
 Send /colors red 360 031279 EEF1FA
 Send {Enter}
 return
 
-::/LeedsBlue::
+::/Leeds2::
 Send /colors blue 360 031279 EEF1FA
 Send {Enter}
 return
 
-::/LeicesterRed::
+::/Leicester::
 Send /colors red 360 EBEAE6 1D5AA5
 Send {Enter}
 return
 
-::/LeicesterBlue::
+::/Leicester2::
 Send /colors blue 360 EBEAE6 1D5AA5
 Send {Enter}
 return
 
-::/LiverpoolRed::
+::/Liverpool::
 Send /colors red 360 FFFFFF 790C0C
 Send {Enter}
 return
 
-::/LiverpoolBlue::
+::/Liverpool2::
 Send /colors blue 360 FFFFFF 790C0C
 Send {Enter}
 return
 
-::/ManCityRed::
+::/ManCity::
 Send /colors red 360 42485D 6CBEF8
 Send {Enter}
 return
 
-::/ManCityBlue::
+::/ManCity2::
 Send /colors blue 360 42485D 6CBEF8
 Send {Enter}
 return
 
-::/ManUTDRed::
+::/ManUTD::
 Send /colors red 360 FFFFFF D62C37
 Send {Enter}
 return
 
-::/ManUTDBlue::
+::/ManUTD2::
 Send /colors blue 360 FFFFFF D62C37
 Send {Enter}
 return
 
-::/NewcastleRed::
+::/Newcastle::
 Send /colors red 360 EB0029 FFFFFF 000000 FFFFFF
 Send {Enter}
 return
 
-::/NewcastleBlue::
+::/Newcastle2::
 Send /colors blue 360 EB0029 FFFFFF 000000 FFFFFF
 Send {Enter}
 return
 
-::/SheffieldRed::
+::/Sheffield::
 Send /colors red 0 1F1E1C DFD9D9 C92A24 DFD9D9
 Send {Enter}
 return
 
-::/SheffieldBlue::
+::/Sheffield2::
 Send /colors blue 0 1F1E1C DFD9D9 C92A24 DFD9D9
 Send {Enter}
 return
 
-::/SouthamptonRed::
+::/Southampton::
 Send /colors red 29 99741B DEDEE2 8F001A DEDEE2
 Send {Enter}
 return
 
-::/SouthamptonBlue::
+::/Southampton2::
 Send /colors blue 29 99741B DEDEE2 8F001A DEDEE2
 Send {Enter}
 return
 
-::/TottenhamRed::
-Send /colors red 90 E04044 FFFFFF
+::/Tottenham::
+Send /colors red 90 232D5B FFFFFF
 Send {Enter}
 return
 
-::/TottenhamBlue::
-Send /colors blue 90 E04044 FFFFFF
+::/Tottenham2::
+Send /colors blue 90 232D5B FFFFFF
 Send {Enter}
 return
 
-::/WestBromwichRed::
+::/WestBromwich::
 Send /colors red 0 000410 152A56 E2E7F2 152A56
 Send {Enter}
 return
 
-::/WestBromwichBlue::
+::/WestBromwich2::
 Send /colors blue 0 000410 152A56 E2E7F2 152A56
 Send {Enter}
 return
 
-::/WestHamRed::
+::/WestHam::
 Send /colors red 360 FFFFFF A9C9F2 7E2038 A9C9F2
 Send {Enter}
 return
 
-::/WestHamBlue::
+::/WestHam2::
 Send /colors blue 360 FFFFFF A9C9F2 7E2038 A9C9F2
 Send {Enter}
 return
 
-::/WolverhamptonRed::
+::/Wolverhampton::
 Send /colors red 0 28201E EFAC1A
 Send {Enter}
 return
 
-::/WolverhamptonBlue::
+::/Wolverhampton2::
 Send /colors blue 0 28201E EFAC1A
 Send {Enter}
 return
@@ -690,202 +700,202 @@ return
 ;SERIE A
 ;////////
 
-::/ACMillanRed::
+::/ACMillan::
 Send /colors red 0 F3F3F8 242426 DF252D 242426
 Send {Enter}
 return
 
-::/ACMillanBlue::
+::/ACMillan2::
 Send /colors blue 0 F3F3F8 242426 DF252D 242426
 Send {Enter}
 return
 
-::/AtalantaRed::
+::/Atalanta::
 Send /colors red 0 F5F5F5 20478A 121315 20478A
 Send {Enter}
 return
 
-::/AtalantaBlue::
+::/Atalanta2::
 Send /colors blue 0 F5F5F5 20478A 121315 20478A
 Send {Enter}
 return
 
-::/BeneventoRed::
+::/Benevento::
 Send /colors red 0 060602 E5A621 B02032 E5A621
 Send {Enter}
 return
 
-::/BeneventoBlue::
+::/Benevento2::
 Send /colors blue 0 060602 E5A621 B02032 E5A621
 Send {Enter}
 return
 
-::/BolognaRed::
+::/Bologna::
 Send /colors red 0 F3F1F2 B72726 2A2D3E B72726
 Send {Enter}
 return
 
-::/BolognaBlue::
+::/Bologna2::
 Send /colors blue 0 F3F1F2 B72726 2A2D3E B72726
 Send {Enter}
 return
 
-::/CagliariRed::
+::/Cagliari::
 Send /colors red 0 FDF7FA F14345 1D2D47
 Send {Enter}
 return
 
-::/CagliariBlue::
+::/Cagliari2::
 Send /colors blue 0 FDF7FA F14345 1D2D47
 Send {Enter}
 return
 
-::/CrotoneRed::
+::/Crotone::
 Send /colors red 0 FDF7FA 396CA3 F3413F 396CA3
 Send {Enter}
 return
 
-::/CrotoneBlue::
+::/Crotone2::
 Send /colors blue 0 FDF7FA 396CA3 F3413F 396CA3
 Send {Enter}
 return
 
-::/FiorentinaRed::
+::/Fiorentina::
 Send /colors red 0 E9E3EC 4F2070
 Send {Enter}
 return
 
-::/FiorentinaBlue::
+::/Fiorentina2::
 Send /colors blue 0 E9E3EC 4F2070
 Send {Enter}
 return
 
-::/GenoaRed::
+::/Genoa::
 Send /colors red 0 B59125 EB3029 1C1E35
 Send {Enter}
 return
 
-::/GenoaBlue::
+::/Genoa2::
 Send /colors blue 0 B59125 EB3029 1C1E35
 Send {Enter}
 return
 
-::/HellasVeronaRed::
+::/HellasVerona::
 Send /colors red 0 FFED4B 102077
 Send {Enter}
 return
 
-::/HellasVeronaBlue::
+::/HellasVerona2::
 Send /colors blue 0 FFED4B 102077
 Send {Enter}
 return
 
-::/InterRed::
+::/Inter::
 Send /colors red 30 F6F6F6 34373E 56A4E2 34373E
 Send {Enter}
 return
 
-::/InterBlue::
+::/Inter2::
 Send /colors blue 30 F6F6F6 34373E 56A4E2 34373E
 Send {Enter}
 return
 
-::/JuventusRed::
+::/Juventus::
 Send /colors red 0 BAA479 373737 E5E9F4 373737
 Send {Enter}
 return
 
-::/JuventusBlue::
+::/Juventus2::
 Send /colors blue 0 BAA479 373737 E5E9F4 373737
 Send {Enter}
 return
 
-::/LazioRed::
+::/Lazio::
 Send /colors red 0 FDFEFF 84BCDF
 Send {Enter}
 return
 
-::/LazioBlue::
+::/Lazio2::
 Send /colors blue 0 FDFEFF 84BCDF
 Send {Enter}
 return
 
-::/NapoliRed::
+::/Napoli::
 Send /colors red 0 F0F5F4 328DEA
 Send {Enter}
 return
 
-::/NapoliBlue::
+::/Napoli2::
 Send /colors blue 0 F0F5F4 328DEA
 Send {Enter}
 return
 
-::/ParmaRed::
+::/Parma::
 Send /colors red 90 CCCCCD F5F5F5 2E2E2F F5F5F5
 Send {Enter}
 return
 
-::/ParmaBlue::
+::/Parma2::
 Send /colors blue 90 CCCCCD F5F5F5 2E2E2F F5F5F5
 Send {Enter}
 return
 
-::/RomaRed::
+::/Roma::
 Send /colors red 90 F8F9F7 F7A824 76101D 76101D
 Send {Enter}
 return
 
-::/RomaBlue::
+::/Roma2::
 Send /colors blue 90 F8F9F7 F7A824 76101D 76101D
 Send {Enter}
 return
 
-::/SampdoriaRed::
+::/Sampdoria::
 Send /colors red 90 EFF0F3 2A41B1 CBCDCC 2A41B1
 Send {Enter}
 return
 
-::/SampdoriaBlue::
+::/Sampdoria2::
 Send /colors blue 90 EFF0F3 2A41B1 CBCDCC 2A41B1
 Send {Enter}
 return
 
-::/SassuoloRed::
+::/Sassuolo::
 Send /colors red 0 DCDFE3 1DC889 28373A 1DC889
 Send {Enter}
 return
 
-::/SassuoloBlue::
+::/Sassuolo2::
 Send /colors blue 0 DCDFE3 1DC889 28373A 1DC889
 Send {Enter}
 return
 
-::/SpeziaRed::
+::/Spezia::
 Send /colors red 0 504844 EDEDED
 Send {Enter}
 return
 
-::/SpeziaBlue::
+::/Spezia2::
 Send /colors blue 0 504844 EDEDED
 Send {Enter}
 return
 
-::/TorinoRed::
+::/Torino::
 Send /colors red 0 E9E8ED 520F1E
 Send {Enter}
 return
 
-::/TorinoBlue::
+::/Torino2::
 Send /colors blue 0 E9E8ED 520F1E
 Send {Enter}
 return
 
-::/UdineseRed::
+::/Udinese::
 Send /colors red 60 28251C 151517 D8D6D9 151517
 Send {Enter}
 return
 
-::/UdineseBlue::
+::/Udinese2::
 Send /colors blue 60 28251C 151517 D8D6D9 151517
 Send {Enter}
 return
@@ -894,202 +904,202 @@ return
 ;LA LIGA
 ;////////
 
-::/AlavesRed::
+::/Alaves::
 Send /colors red 0 504645 2556BC ECE6E8 2556BC
 Send {Enter}
 return
 
-::/AlavesBlue::
+::/Alaves2::
 Send /colors blue 0 504645 2556BC ECE6E8 2556BC
 Send {Enter}
 return
 
-::/AthleticRed::
+::/Athletic::
 Send /colors red 0 2B2A29 C6C6C7 AE1213 C6C6C7
 Send {Enter}
 return
 
-::/AthleticBlue::
+::/Athletic2::
 Send /colors blue 0 2B2A29 C6C6C7 AE1213 C6C6C7
 Send {Enter}
 return
 
-::/AtleticoMadridRed::
+::/AtleticoMadrid::
 Send /colors red 0 32385F EFEFEF D62B34 EFEFEF
 Send {Enter}
 return
 
-::/AtleticoMadridBlue::
+::/AtleticoMadrid2::
 Send /colors blue 0 32385F EFEFEF D62B34 EFEFEF
 Send {Enter}
 return
 
-::/BarcelonaRed::
+::/Barcelona::
 Send /colors red 0 FCC933 8B2136 242D63 8B2136
 Send {Enter}
 return
 
-::/BarcelonaBlue::
+::/Barcelona2::
 Send /colors blue 0 FCC933 8B2136 242D63 8B2136
 Send {Enter}
 return
 
-::/CadizRed::
+::/Cadiz::
 Send /colors red 0 344DAD E1C53E
 Send {Enter}
 return
 
-::/CadizBlue::
+::/Cadiz2::
 Send /colors blue 0 344DAD E1C53E
 Send {Enter}
 return
 
-::/CeltaVigoRed::
+::/CeltaVigo::
 Send /colors red 0 0A0440 C3DDEC
 Send {Enter}
 return
 
-::/CeltaVigoBlue::
+::/CeltaVigo2::
 Send /colors red 0 0A0440 C3DDEC
 Send {Enter}
 return
 
-::/EibarRed::
+::/Eibar::
 Send /colors red 0 DBDBDB 203880 BB142B 203880
 Send {Enter}
 return
 
-::/EibarBlue::
+::/Eibar2::
 Send /colors blue 0 DBDBDB 203880 BB142B 203880
 Send {Enter}
 return
 
-::/ElcheRed::
+::/Elche::
 Send /colors red 90 23241B C6CCD8 056856 C6CCD8
 Send {Enter}
 return
 
-::/ElcheBlue::
+::/Elche2::
 Send /colors blue 90 23241B C6CCD8 056856 C6CCD8
 Send {Enter}
 return
 
-::/GetafeRed::
+::/Getafe::
 Send /colors red 0 DBE1E5 283D9F
 Send {Enter}
 return
 
-::/GetafeBlue::
+::/Getafe2::
 Send /colors red 0 DBE1E5 283D9F
 Send {Enter}
 return
 
-::/GranadaRed::
+::/Granada::
 Send /colors red 90 09358E CDC4CF A90924 CDC4CF
 Send {Enter}
 return
 
-::/GranadaBlue::
+::/Granada2::
 Send /colors blue 90 09358E CDC4CF A90924 CDC4CF
 Send {Enter}
 return
 
-::/HuescaRed::
+::/Huesca::
 Send /colors red 0 B5BDCA 052764 BC1221 052764
 Send {Enter}
 return
 
-::/HuescaBlue::
+::/Huesca2::
 Send /colors blue 0 B5BDCA 052764 BC1221 052764
 Send {Enter}
 return
 
-::/LevanteRed::
+::/Levante::
 Send /colors red 0 F7F5F6 074077 A02D3C 074077
 Send {Enter}
 return
 
-::/LevanteBlue::
+::/Levante2::
 Send /colors blue 0 F7F5F6 074077 A02D3C 074077
 Send {Enter}
 return
 
-::/OsasunaRed::
+::/Osasuna::
 Send /colors red 0 E7E7EE 2F4B87 8E0921 2F4B87
 Send {Enter}
 return
 
-::/OsasunaBlue::
+::/Osasuna2::
 Send /colors blue 0 E7E7EE 2F4B87 8E0921 2F4B87
 Send {Enter}
 return
 
-::/RealBetisRed::
+::/RealBetis::
 Send /colors red 0 FFFFFF E0E0E0 3D9670
 Send {Enter}
 return
 
-::/RealBetisBlue::
+::/RealBetis2::
 Send /colors blue 0 FFFFFF E0E0E0 3D9670
 Send {Enter}
 return
 
-::/RealMadridRed::
+::/RealMadrid::
 Send /colors red 0 1F1E23 F4F4F4
 Send {Enter}
 return
 
-::/RealMadridBlue::
+::/RealMadrid2::
 Send /colors blue 0 1F1E23 F4F4F4
 Send {Enter}
 return
 
-::/RealSociedadRed::
+::/RealSociedad::
 Send /colors red 0 282C2D F3F3F0 0163C7 F3F3F0
 Send {Enter}
 return
 
-::/RealSociedadBlue::
+::/RealSociedad2::
 Send /colors blue 0 282C2D F3F3F0 0163C7 F3F3F0
 Send {Enter}
 return
 
-::/RealValladolidRed::
+::/RealValladolid::
 Send /colors red 0 35333C F5F5F4 614F9E F5F5F4
 Send {Enter}
 return
 
-::/RealValladolidBlue::
+::/RealValladolid2::
 Send /colors blue 0 35333C F5F5F4 614F9E F5F5F4
 Send {Enter}
 return
 
-::/SevillaRed::
+::/Sevilla::
 Send /colors red 138 35333C C1C1C1 F1F1F1 C1C1C1
 Send {Enter}
 return
 
-::/SevillaBlue::
+::/Sevilla2::
 Send /colors red 138 35333C C1C1C1 F1F1F1 C1C1C1
 Send {Enter}
 return
 
-::/ValenciaRed::
+::/Valencia::
 Send /colors red 0 2B281E F6F1EC
 Send {Enter}
 return
 
-::/ValenciaBlue::
+::/Valencia2::
 Send /colors blue 0 2B281E F6F1EC
 Send {Enter}
 return
 
-::/VillarealRed::
+::/Villareal::
 Send /colors red 0 263A4A FCDF4F
 Send {Enter}
 return
 
-::/VillarealBlue::
+::/Villareal2::
 Send /colors blue 0 263A4A FCDF4F
 Send {Enter}
 return
@@ -1098,184 +1108,184 @@ return
 ;BUNDESLIGA
 ;///////////
 
-::/AugsburgRed::
+::/Augsburg::
 Send /colors red 0 262626 E7E7E7
 Send {Enter}
 return
 
-::/AugsburgBlue::
+::/Augsburg2::
 Send /colors red 0 262626 E7E7E7
 Send {Enter}
 return
 
-::/BayernRed::
+::/Bayern::
 Send /colors red 0 F4F0F2 F71B34
 Send {Enter}
 return
 
-::/BayernBlue::
+::/Bayern2::
 Send /colors blue 0 F4F0F2 F71B34
 Send {Enter}
 return
 
-::/BielefeldRed::
+::/Bielefeld::
 Send /colors red 130 FFFFFF 24232B DAD9DE 1766B1
 Send {Enter}
 return
 
-::/BielefeldBlue::
+::/Bielefeld2::
 Send /colors blue 130 FFFFFF 24232B DAD9DE 1766B1
 Send {Enter}
 return
 
-::/DortmundRed::
+::/Dortmund::
 Send /colors red 0 191008 F1D80A
 Send {Enter}
 return
 
-::/DortmundBlue::
+::/Dortmund2::
 Send /colors blue 0 191008 F1D80A
 Send {Enter}
 return
 
-::/FrankfurtRed::
+::/Frankfurt::
 Send /colors red 0 F7F7F7 272324 D32831 272324
 Send {Enter}
 return
 
-::/FrankfurtBlue::
+::/Frankfurt2::
 Send /colors blue 0 F7F7F7 272324 D32831 272324
 Send {Enter}
 return
 
-::/FreiburgRed::
+::/Freiburg::
 Send /colors red 0 050202 DC2632 E3E1EE DC2632
 Send {Enter}
 return
 
 
-::/FreiburgBlue::
+::/Freiburg2::
 Send /colors blue 0 050202 DC2632 E3E1EE DC2632
 Send {Enter}
 return
 
 
-::/HertaRed::
+::/Herta::
 Send /colors red 0 201C24 E1E1E9 0152BD E1E1E9
 Send {Enter}
 return
 
-::/HertaBlue::
+::/Herta2::
 Send /colors blue 0 201C24 E1E1E9 0152BD E1E1E9
 Send {Enter}
 return
 
-::/HoffenheimRed::
+::/Hoffenheim::
 Send /colors red 0 EDEEF2 0045A0
 Send {Enter}
 return
 
-::/HoffenheimBlue::
+::/Hoffenheim2::
 Send /colors blue 0 EDEEF2 0045A0
 Send {Enter}
 return
 
-::/KolnRed::
+::/Koln::
 Send /colors red 0 B94353 F1F1F9
 Send {Enter}
 return
 
-::/KolnBlue::
+::/Koln2::
 Send /colors blue 0 B94353 F1F1F9
 Send {Enter}
 return
 
-::/LeipzigRed::
+::/Leipzig::
 Send /colors red 0 EB0011 ECEDF2
 Send {Enter}
 return
 
-::/LeipzigBlue::
+::/Leipzig2::
 Send /colors blue 0 EB0011 ECEDF2
 Send {Enter}
 return
 
-::/LeverkusenRed::
+::/Leverkusen::
 Send /colors red 0 FEFEFE 1C1C1C
 Send {Enter}
 return
 
-::/LeverkusenBlue::
+::/Leverkusen2::
 Send /colors blue 0 FEFEFE 1C1C1C
 Send {Enter}
 return
 
-::/MainzRed::
+::/Mainz::
 Send /colors red 0 F0F0EF C1353E E23940
 Send {Enter}
 return
 
-::/MainzBlue::
+::/Mainz2::
 Send /colors blue 0 F0F0EF C1353E E23940
 Send {Enter}
 return
 
-::/MgladbachRed::
+::/Mgladbach::
 Send /colors red 0 030406 C3C2C8 DBDAE0
 Send {Enter}
 return
 
-::/MgladbachBlue::
+::/Mgladbach2::
 Send /colors blue 0 030406 C3C2C8 DBDAE0
 Send {Enter}
 return
 
-::/SchalkeRed::
+::/Schalke::
 Send /colors red 0 F4F3F5 01328E
 Send {Enter}
 return
 
-::/SchalkeBlue::
+::/Schalke2::
 Send /colors blue 0 F4F3F5 01328E
 Send {Enter}
 return
 
-::/StuttgartRed::
+::/Stuttgart::
 Send /colors red 90 221F1F F1F1F1 DB2126 F1F1F1
 Send {Enter}
 return
 
-::/StuttgartBlue::
+::/Stuttgart2::
 Send /colors blue 90 221F1F F1F1F1 DB2126 F1F1F1
 Send {Enter}
 return
 
-::/UnionBerlinRed::
+::/UnionBerlin::
 Send /colors red 0 F9EFED C51F30
 Send {Enter}
 return
 
-::/UnionBerlinBlue::
+::/UnionBerlin2::
 Send /colors blue 0 F9EFED C51F30
 Send {Enter}
 return
 
-::/WerderBremenRed::
+::/WerderBremen::
 Send /colors red 90 ECF5F6 169779 169779 088366
 Send {Enter}
 return
 
-::/WerderBremenBlue::
+::/WerderBremen2::
 Send /colors blue 90 ECF5F6 169779 169779 088366
 Send {Enter}
 return
 
-::/WolfsburgRed::
+::/Wolfsburg::
 Send /colors red 0 0059AF A0E568
 Send {Enter}
 return
 
-::/WolfsburgBlue::
+::/Wolfsburg2::
 Send /colors blue 0 0059AF A0E568
 Send {Enter}
 return
@@ -1284,202 +1294,202 @@ return
 ;LIGUE 1
 ;////////
 
-::/AngersRed::
+::/Angers::
 Send /colors red 0 878787 161616 F3F3F3 161616
 Send {Enter}
 return
 
-::/AngersBlue::
+::/Angers2::
 Send /colors blue 0 878787 161616 F3F3F3 161616
 Send {Enter}
 return
 
-::/BordeauxRed::
+::/Bordeaux::
 Send /colors red 90 E9E6E6 313C6A 1D244C 313C6A
 Send {Enter}
 return
 
-::/BordeauxBlue::
+::/Bordeaux2::
 Send /colors blue 90 E9E6E6 313C6A 1D244C 313C6A
 Send {Enter}
 return
 
-::/BrestRed::
+::/Brest::
 Send /colors red 0 DFE1E0 BC1A15
 Send {Enter}
 return
 
-::/BrestBlue::
+::/Brest2::
 Send /colors blue0 DFE1E0 BC1A15
 Send {Enter}
 return
 
-::/DijonRed::
+::/Dijon::
 Send /colors red 0 DADADA A80F10 0D0D0D A80F10
 Send {Enter}
 return
 
-::/DijonBlue::
+::/Dijon2::
 Send /colors blue 0 DADADA A80F10 0D0D0D A80F10
 Send {Enter}
 return
 
-::/LensRed::
+::/Lens::
 Send /colors red 0 FDFDFD EE0024 EFD232 EE0024
 Send {Enter}
 return
 
-::/LensBlue::
+::/Lens2::
 Send /colors blue 0 FDFDFD EE0024 EFD232 EE0024
 Send {Enter}
 return
 
-::/LillieRed::
+::/Lillie::
 Send /colors red 90 FCF8F7 133362 DA1B28 DA1B28
 Send {Enter}
 return
 
-::/LillieBlue::
+::/Lillie2::
 Send /colors blue 90 FCF8F7 133362 DA1B28 DA1B28
 Send {Enter}
 return
 
-::/LorientRed::
+::/Lorient::
 Send /colors red 0 FBF8FA F35E46
 Send {Enter}
 return
 
-::/LorientBlue::
+::/Lorient2::
 Send /colors blue 0 FBF8FA F35E46
 Send {Enter}
 return
 
-::/LyonRed::
+::/Lyon::
 Send /colors red 0 0054A4 F4F4F4
 Send {Enter}
 return
 
-::/LyonBlue::
+::/Lyon2::
 Send /colors blue 0 0054A4 F4F4F4
 Send {Enter}
 return
 
-::/MarseilleRed::
+::/Marseille::
 Send /colors red 0 1D9DDA F4F4F4
 Send {Enter}
 return
 
-::/MarseilleBlue::
+::/Marseille2::
 Send /colors blue 0 1D9DDA F4F4F4
 Send {Enter}
 return
 
-::/MetzRed::
+::/Metz::
 Send /colors red 0 F5F8F5 681819 561717
 Send {Enter}
 return
 
-::/MetzBlue::
+::/Metz2::
 Send /colors blue 00 F5F8F5 681819 561717
 Send {Enter}
 return
 
-::/MonacoRed::
+::/Monaco::
 Send /colors red 145 0D110E E9343B E1E1E1
 Send {Enter}
 return
 
-::/MonacoBlue::
+::/Monaco2::
 Send /colors blue 145 0D110E E9343B E1E1E1
 Send {Enter}
 return
 
-::/MontpellierRed::
+::/Montpellier::
 Send /colors red 0 FEC28B 28365B
 Send {Enter}
 return
 
-::/MontpellierBlue::
+::/Montpellier2::
 Send /colors blue 0 FEC28B 28365B
 Send {Enter}
 return
 
-::/NantesRed::
+::/Nantes::
 Send /colors red 0 FC4845 029151 FCE442 029151
 Send {Enter}
 return
 
-::/NantesBlue::
+::/Nantes2::
 Send /colors blue 0 FC4845 029151 FCE442 029151
 Send {Enter}
 return
 
-::/NiceRed::
+::/Nice::
 Send /colors red 0 E7F1F3 1E1E21 D73128 1E1E21
 Send {Enter}
 return
 
-::/NiceBlue::
+::/Nice2::
 Send /colors blue 0 E7F1F3 1E1E21 D73128 1E1E21
 Send {Enter}
 return
 
-::/NimesRed::
+::/Nimes::
 Send /colors red 0 F7F7F7 E22C29
 Send {Enter}
 return
 
-::/NimesBlue::
+::/Nimes2::
 Send /colors blue 0 F7F7F7 E22C29
 Send {Enter}
 return
 
-::/PSGRed::
+::/PSG::
 Send /colors red 0 F7F7F7 1C2641 E5082B 1C2641
 Send {Enter}
 return
 
-::/PSGBlue::
+::/PSG2::
 Send /colors blue 0 F7F7F7 1C2641 E5082B 1C2641
 Send {Enter}
 return
 
-::/ReimsRed::
+::/Reims::
 Send /colors red 0 F7FDFB E50122
 Send {Enter}
 return
 
-::/ReimsBlue::
+::/Reims2::
 Send /colors blue 0 F7FDFB E50122
 Send {Enter}
 return
 
-::/RennesRed::
+::/Rennes::
 Send /colors red 90 EAE8EB DC1228 B51331
 Send {Enter}
 return
 
-::/RennesBlue::
+::/Rennes2::
 Send /colors blue 90 EAE8EB DC1228 B51331
 Send {Enter}
 return
 
-::/SaintEtienneRed::
+::/SaintEtienne::
 Send /colors red 90 00BD54 202020
 Send {Enter}
 return
 
-::/SaintEtienneBlue::
+::/SaintEtienne2::
 Send /colors red 90 00BD54 202020
 Send {Enter}
 return
 
-::/StrasbourgRed::
+::/Strasbourg::
 Send /colors red 0 CBD7E7 047BD8
 Send {Enter}
 return
 
-::/StrasbourgBlue::
+::/Strasbourg2::
 Send /colors blue 0 CBD7E7 047BD8
 Send {Enter}
 return
@@ -1488,202 +1498,202 @@ return
 ;WORLD
 ;//////
 
-::/ArgentinaRed::
+::/Argentina::
 Send /colors red 0 2B2929 8DB1DE E9EAFF 8DB1DE
 Send {Enter}
 return
 
-::/ArgentinaBlue::
+::/Argentina2::
 Send /colors blue 0 2B2929 8DB1DE E9EAFF 8DB1DE
 Send {Enter}
 return
 
-::/BelgiumRed::
+::/Belgium::
 Send /colors red 45 FDCE13 CF4441 382C2C CF4441
 Send {Enter}
 return
 
-::/BelgiumBlue::
+::/Belgium2::
 Send /colors blue 45 FDCE13 CF4441 382C2C CF4441
 Send {Enter}
 return
 
-::/BrazilRed::
+::/Brazil::
 Send /colors red 0 04984D F6C802
 Send {Enter}
 return
 
-::/BrazilBlue::
+::/Brazil2::
 Send /colors blue 0 04984D F6C802
 Send {Enter}
 return
 
-::/ColombiaRed::
+::/Colombia::
 Send /colors red 0 F35861 F6F25A
 Send {Enter}
 return
 
-::/ColombiaBlue::
+::/Colombia2::
 Send /colors blue 0 F35861 F6F25A
 Send {Enter}
 return
 
-::/CroatiaRed::
+::/Croatia::
 Send /colors red 0 4A69CA FF5E56 F9F9F9
 Send {Enter}
 return
 
-::/CroatiaBlue::
+::/Croatia2::
 Send /colors blue 0 4A69CA FF5E56 F9F9F9
 Send {Enter}
 return
 
-::/EnglandRed::
+::/England::
 Send /colors red 0 0C4890 E1E3E7
 Send {Enter}
 return
 
-::/EnglandBlue::
+::/England2::
 Send /colors blue 0 0C4890 E1E3E7
 Send {Enter}
 return
 
-::/FranceRed::
+::/France::
 Send /colors red 90 F4F5F5 3860BA FF5D55 474167
 Send {Enter}
 return
 
-::/FranceBlue::
+::/France2::
 Send /colors blue 90 F4F5F5 3860BA FF5D55 474167
 Send {Enter}
 return
 
-::/GermanyRed::
+::/Germany::
 Send /colors red 90 242424 E5E5E5 675A5B E5E5E5
 Send {Enter}
 return
 
-::/GermanyBlue::
+::/Germany2::
 Send /colors blue 90 242424 E5E5E5 675A5B E5E5E5
 Send {Enter}
 return
 
-::/ItalyRed::
+::/Italy::
 Send /colors red 0 C7B375 1D4C9E
 Send {Enter}
 return
 
-::/ItalyBlue::
+::/Italy2::
 Send /colors blue 0 C7B375 1D4C9E
 Send {Enter}
 return
 
-::/JapanRed::
+::/Japan::
 Send /c/colors red 0 900217 1873C5
 Send {Enter}
 return
 
-::/JapanBlue::
+::/Japan2::
 Send /colors blue 0 900217 1873C5
 Send {Enter}
 return
 
-::/MexicoRed::
+::/Mexico::
 Send /colors red 0 B45466 1D1717
 Send {Enter}
 return
 
-::/MexicoBlue::
+::/Mexico2::
 Send /colors blue 0 B45466 1D1717
 Send {Enter}
 return
 
-::/NetherlandsRed::
+::/Netherlands::
 Send /colors red 0 272625 F7784D
 Send {Enter}
 return
 
-::/NetherlandsBlue::
+::/Netherlands2::
 Send /colors blue 0 272625 F7784D
 Send {Enter}
 return
 
-::/NigeriaRed::
+::/Nigeria::
 Send /colors red 0 1D1E20 359459 D3D7DA 359459
 Send {Enter}
 return
 
-::/NigeriaBlue::
+::/Nigeria2::
 Send /colors blue 0 1D1E20 359459 D3D7DA 359459
 Send {Enter}
 return
 
-::/PolandRed::
+::/Poland::
 Send /colors red 0 FC4045 F4F4F6
 Send {Enter}
 return
 
-::/PolandBlue::
+::/Poland2::
 Send /colors blue 0 FC4045 F4F4F6
 Send {Enter}
 return
 
-::/PortugalRed::
+::/Portugal::
 Send /colors red 0 D2D1A3 D3284C
 Send {Enter}
 return
 
-::/PortugalBlue::
+::/Portugal2::
 Send /colors blue 0 D2D1A3 D3284C
 Send {Enter}
 return
 
-::/RussiaRed::
+::/Russia::
 Send /colors red 0 DED6DA CD2334
 Send {Enter}
 return
 
-::/RussiaBlue::
+::/Russia2::
 Send /colors blue 0 DED6DA CD2334
 Send {Enter}
 return
 
-::/SpainRed::
+::/Spain::
 Send /colors red 0 FAD233 800320 D11432
 Send {Enter}
 return
 
-::/SpainBlue::
+::/Spain2::
 Send /colors blue 0 FAD233 800320 D11432
 Send {Enter}
 return
 
-::/SwedenRed::
+::/Sweden::
 Send /colors red 0 292244 E3A900
 Send {Enter}
 return
 
-::/SwedenBlue::
+::/Sweden2::
 Send /colors blue 0 292244 E3A900
 Send {Enter}
 return
 
-::/SwitzerlandRed::
+::/Switzerland::
 Send /colors red 0 EBEAEF E80018
 Send {Enter}
 return
 
-::/SwitzerlandBlue::
+::/Switzerland2::
 Send /colors blue 0 EBEAEF E80018
 Send {Enter}
 return
 
-::/UruguayRed::
+::/Uruguay::
 Send /colors red 0 EBEAEF 6CABF8
 Send {Enter}
 return
 
-::/UruguayBlue::
+::/Uruguay2::
 Send /colors blue 0 EBEAEF 6CABF8
 Send {Enter}
 return
@@ -1692,27 +1702,27 @@ return
 ;SPECIAL
 ;////////
 
-::/ChatButtonRed::
+::/ChatButton::
 Send /colors red 0 FFFFFF 244967
 Send {Enter}
 return
 
-::/ChatButtonBlue::
+::/ChatButton2::
 Send /colors blue 0 FFFFFF 244967
 Send {Enter}
 return
 
-::/ChatTextRed::
+::/ChatText::
 Send /colors red 0 70D29E 1A2125
 Send {Enter}
 return
 
-::/ChatTextBlue::
+::/ChatText2::
 Send /colors blue 0 70D29E 1A2125
 Send {Enter}
 return
 
-::/CopsRobbersRed::
+::/CopsRobbers::
 Send /colors red 90 FCFCFC E3E3E3
 Send {Enter}
 Send {Enter}
@@ -1720,7 +1730,7 @@ Send /colors blue 60 E3E7EE 5D72B3
 Send {Enter}
 return
 
-::/CopsRobbersBlue::
+::/CopsRobbers2::
 Send /colors blue 90 FCFCFC E3E3E3
 Send {Enter}
 Send {Enter}
@@ -1728,172 +1738,172 @@ Send /colors red 60 E3E7EE 5D72B3
 Send {Enter}
 return
 
-::/EmojiRed::
+::/Emoji::
 Send /colors red 0 000000 FFC83D
 Send {Enter}
 return
 
-::/EmojiBlue::
+::/Emoji2::
 Send /colors blue 0 000000 FFC83D
 Send {Enter}
 return
 
-::/FootballRed::
+::/Football::
 Send /colors red 0 FFFFFF FFFFFF
 Send {Enter}
 return
 
-::/FootballBlue::
+::/Football2::
 Send /colors blue 0 FFFFFF FFFFFF
 Send {Enter}
 return
 
-::/NeonBlueRed::
+::/NeonBlue::
 Send /colors red 0 EDEDED 3233FA
 Send {Enter}
 return
 
-::/NeonBlueBlue::
+::/NeonBlue2::
 Send /colors blue 0 EDEDED 3233FA
 Send {Enter}
 return
 
-::/NeonCyanRed::
+::/NeonCyan::
 Send /colors red 0 EDEDED 01FEFE
 Send {Enter}
 return
 
-::/NeonCyanBlue::
+::/NeonCyan2::
 Send /colors blue 0 EDEDED 01FEFE
 Send {Enter}
 return
 
-::/NeonDarkBlueRed::
+::/NeonDarkBlue::
 Send /colors red 0 FFFFFF 0000FE
 Send {Enter}
 return
 
-::/NeonDarkBlueBlue::
+::/NeonDarkBlue2::
 Send /colors blue 0 FFFFFF 0000FE
 Send {Enter}
 return
 
-::/NeonGreenRed::
+::/NeonGreen::
 Send /colors red 0 EDEDED 00FC01
 Send {Enter}
 return
 
-::/NeonGreenBlue::
+::/NeonGreen2::
 Send /colors blue 0 EDEDED 00FC01
 Send {Enter}
 return
 
-::/NeonLimeRed::
+::/NeonLime::
 Send /colors red 0 000000 E0F829
 Send {Enter}
 return
 
-::/NeonLimeBlue::
+::/NeonLime2::
 Send /colors blue 0 000000 E0F829
 Send {Enter}
 return
 
-::/NeonOrangeRed::
-Send /colors red 0 F7F7F7 FC4700
+::/NeonOrange::
+Send /colors red 0 FFFFFF FC4700
 Send {Enter}
 return
 
-::/NeonOrangeBlue::
-Send /colors blue 0 F7F7F7 FC4700
+::/NeonOrange2::
+Send /colors blue 0 FFFFFF FC4700
 Send {Enter}
 return
 
-::/NeonPinkRed::
-Send /colors red 0 F7F7F7 FD397F
+::/NeonPink::
+Send /colors red 0 FFFFFF FD397F
 Send {Enter}
 return
 
-::/NeonPinkBlue::
-Send /colors blue 0 F7F7F7 FD397F
+::/NeonPink2::
+Send /colors blue 0 FFFFFF FD397F
 Send {Enter}
 return
 
-::/NeonPurpleRed::
-Send /colors red 0 F7F7F7 9D1FEB
+::/NeonPurple::
+Send /colors red 0 FFFFFF 9D1FEB
 Send {Enter}
 return
 
-::/NeonPurpleBlue::
-Send /colors blue 0 F7F7F7 9D1FEB
+::/NeonPurple2::
+Send /colors blue 0 FFFFFF 9D1FEB
 Send {Enter}
 return
 
-::/NeonRedRed::
-Send /colors red 0 F7F7F7 FF0000
+::/NeonRed::
+Send /colors red 0 FFFFFF FF0000
 Send {Enter}
 return
 
-::/NeonRedBlue::
-Send /colors blue 0 F7F7F7 FF0000
+::/NeonRed2::
+Send /colors blue 0 FFFFFF FF0000
 Send {Enter}
 return
 
-::/NeonYellowRed::
+::/NeonYellow::
 Send /colors red 0 000000 F7FF00
 Send {Enter}
 return
 
-::/NeonYellowBlue::
+::/NeonYellow2::
 Send /colors blue 0 000000 F7FF00
 Send {Enter}
 return
 
-::/PitchDarkGreenRed::
+::/PitchDarkGreen::
 Send /colors red 0 688F56 688F56
 Send {Enter}
 return
 
-::/PitchDarkGreenBlue::
+::/PitchDarkGreen2::
 Send /colors blue 0 688F56 688F56
 Send {Enter}
 return
 
-::/PitchGreenRed::
+::/PitchGreen::
 Send /colors red 0 718C5A 718C5A
 Send {Enter}
 return
 
-::/PitchGreenBlue::
+::/PitchGreen2::
 Send /colors blue 0 718C5A 718C5A
 Send {Enter}
 return
 
-::/PitchLightGreenRed::
+::/PitchLightGreen::
 Send /colors red 0 81A473 81A473
 Send {Enter}
 return
 
-::/PitchLightGreenBlue::
+::/PitchLightGreen2::
 Send /colors blue 0 81A473 81A473
 Send {Enter}
 return
 
-::/PostBlueRed::
+::/PostBlue::
 Send /colors red 0 CCCCFF CCCCFF
 Send {Enter}
 return
 
-::/PostBlueBlue::
+::/PostBlue2::
 Send /colors blue 0 CCCCFF CCCCFF
 Send {Enter}
 return
 
-::/PostRedRed::
+::/PostRed::
 Send /colors red 0 FFFFFF A9C9F2 7E2038 A9C9F2
 Send {Enter}
 return
 
-::/PostRedBlue::
+::/PostRed2::
 Send /colors blue 0 FFFFFF A9C9F2 7E2038 A9C9F2
 Send {Enter}
 return
